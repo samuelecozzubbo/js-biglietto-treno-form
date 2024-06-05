@@ -8,7 +8,32 @@
 </head>
 <body>
     <main>
-        
+        <div class="container">
+            <h1>Online ticket</h1>
+            <div id="ticket-price"></div>
+            <form action="#">
+                <label for="name">Nome e Cognome</label><br>
+                <input type="text" class="name" placeholder="Inserisci il tuo nome e cognome"><br>
+                <label for="km">km</label><br>
+                <input type="text" class="km" placeholder="Inserisci quanti km vuoi percorrere"><br>
+                <label for="userAge">Fascia d'età</label><br>
+                <select id="user-age" name="age">
+                    <option value="maggiorenne">Maggiorenne</option>
+                    <option value="minorenne">Minorenne</option>
+                    <option value="over-65">Over 65</option>
+                </select>
+
+                <button class="ticket-submit">Genera</button>
+            </form>          
+        </div>
+
+        <div class="container">
+            <h3>Validazione biglietto</h3>
+            <div id="user-info"></div>
+            <h3 id="current-date"></h3>  
+            <div id="ticket-id"></div>
+            <div id="ticket-type"></div>
+        </div>
     </main>
     <script src="js/script.js"></script>
 </body>
