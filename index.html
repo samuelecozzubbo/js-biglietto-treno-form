@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>js-biglietto-treno-form</title>
 </head>
@@ -10,29 +14,72 @@
     <main>
         <div class="container">
             <h1>Online ticket</h1>
-            <form action="#">
-                <label for="name">Nome e Cognome</label><br>
-                <input type="text" class="name" placeholder="Inserisci il tuo nome e cognome"><br>
-                <label for="km">km</label><br>
-                <input type="text" class="km" placeholder="Inserisci quanti km vuoi percorrere"><br>
-                <label for="userAge">Fascia d'età</label><br>
-                <select class="age" name="age">
-                    <option value="maggiorenne">Maggiorenne</option>
-                    <option value="minorenne">Minorenne</option>
-                    <option value="over-65">Over-65</option>
-                </select>
-
-                <button class="ticket-submit">Genera</button>
-            </form>          
+            <div class="ticket-form">
+                <form action="#">
+                    <div class="form-inputs">
+                        <div class="form-element">
+                            <label for="name">Nome e Cognome</label><br>
+                            <input type="text" class="name" placeholder="Inserisci il tuo nome e cognome">
+                        </div>
+                        <div class="form-element">
+                            <label for="km">km</label><br>
+                        <input type="text" class="km" placeholder="Inserisci quanti km vuoi percorrere">
+                        </div>
+                        <div class="form-element">
+                            <label for="userAge">Fascia d'età</label><br>
+                        <select class="age" name="age">
+                            <option value="maggiorenne">Maggiorenne</option>
+                            <option value="minorenne">Minorenne</option>
+                            <option value="over-65">Over-65</option>
+                        </select>
+                        </div>
+                    </div>
+                    
+                    <button class="ticket-submit">Genera</button>
+                    <button>Annulla</button>
+                </form>
+            </div>              
         </div>
 
-        <div class="container">
-            <div id="ticket-price"></div>
-            <h3>Validazione biglietto</h3>
-            <div id="user-info"></div>
-            <h3 id="current-date"></h3>  
-            <div id="ticket-id"></div>
-            <div id="ticket-type"></div>
+        <div class="hidden" id="ticket">
+            <h2 style="text-align: center;">
+                Il tuo biglietto
+            </h2>
+
+            <div class="container">
+                <h3>
+                    Informazioni Biglietto
+                </h3>
+                <div class="ticket-info">
+                    <div class="ticket-name">
+                        <h3>
+                            Nome Passeggero
+                        </h3>
+                        <div id="passengerName"></div>
+                    </div>
+                    
+                    <div class="ticket-details">
+                        <table style="text-align: center; width: 100%;">
+                            <tr>
+                              <th>Tariffa</th>
+                              <th>Carrozza</th>
+                              <th>Id biglietto</th>
+                              <th>Costo biglietto</th>
+                            </tr>
+                            <tr>
+                              <td id="ticket-type"></td>
+                              <td id="wagon"></td>
+                              <td id="ticket-id"></td>
+                              <td id="ticket-price"></td>
+                            </tr>
+                          </table>
+                          
+                    </div>
+                </div>
+                
+            </div>
+           
+            
         </div>
     </main>
     <script src="js/script.js"></script>

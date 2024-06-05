@@ -1,25 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
 .container{
     background-color: burlywood;
     max-width: 1100px;
     margin: 0 auto;
     padding: 30px;
-    text-align: center;
     position: relative;
     margin-bottom: 50px;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
 }
 
 h1{
     color: royalblue;
 }
-
-#ticket-id{
-    position: absolute;
-    left: 0;
-    bottom: 0;
+/* Form */
+.form-inputs{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    color: royalblue;
+}
+.form-element{
+    width: calc(100% / 3);
+}
+input,select,button{
+    padding: 8px;
+    border: 2px solid royalblue;
+    border-radius: 10px;
 }
 
-#ticket-type{
-    position: absolute;
-    right: 0;
-    bottom: 0;
+button:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+/* Ticket stampato */
+.ticket-info{
+    width: 100%;
+    background-color: white;
+    border: solid 1px gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-name{
+    flex-basis: 0;
+    flex-grow: 1;
+    background-color: lightgray;
+    padding: 30px;
+}
+
+.ticket-details{
+    flex-basis: 0;
+    flex-grow: 2;
 }

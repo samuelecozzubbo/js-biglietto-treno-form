@@ -35,12 +35,32 @@ submit.addEventListener("click",
             price = ticketPriceSenior;
             message = "Senior Ticket";
         } else if(userAge == "maggiorenne") {
-            price = ticketPrice;
+            price = ticketPrice.toFixed(2);
             message= "Full price Ticket";
         }
 
+        //Output nome passeggero
+        document.getElementById("passengerName").innerHTML = userName;
+
+        //stampa tipologia biglietto
+        document.getElementById("ticket-type").innerHTML = message;
+
+        //generatore id biglietto
+        let ticketId;
+        let randomNum =  Math.floor(Math.random() * 10);
+        ticketId = `${randomNum}${randomNum + 1}${randomNum + 2}${randomNum + 3}`;
+        document.getElementById("ticket-id").innerHTML = ticketId;
+
+        //generatore numero Carrozza
+        let wagonNumber =  Math.floor(Math.random() * 10);
+        document.getElementById("wagon").innerHTML = wagonNumber;
+
         //L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
-        document.getElementById("ticket-price").innerHTML = `Il costo del tuo biglietto è di € ${price}`;
+        document.getElementById("ticket-price").innerHTML = price;
+
+        //Display block al biglietto
+        const element = document.getElementById("ticket");
+        element.classList.remove("hidden");
     }
 );
 
