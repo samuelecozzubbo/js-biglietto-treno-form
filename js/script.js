@@ -38,5 +38,10 @@ submit.addEventListener("click",
             price = ticketPrice;
             message= "Full price Ticket";
         }
+
+        //L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
+        document.getElementById("ticket-price").innerHTML = `Il costo del tuo biglietto è di € ${price}`;
     }
 );
+
+
